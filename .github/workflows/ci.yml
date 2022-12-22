@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - run: pip install -r requirements.txt
+      - run: pip install pygbag
       - run: pygbag --build $GITHUB_WORKSPACE
       - uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
