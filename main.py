@@ -18,7 +18,7 @@ def update(screen, cells, size, with_progress=False):
                 for j in range(col-1, col+2):
                     if i >= 0 and i < len(cells) and j >= 0 and j < len(cells[0]) and (i != row or j != col):
                         alive += cells[i][j]
-            color = BG_COLOR if cells[row][col] == 0 else ALIVE_COLOR
+            color = ALIVE_COLOR if cells[row][col] else BG_COLOR
 
             if cells[row][col] == 1:
                 if alive < 2 or alive > 3:
