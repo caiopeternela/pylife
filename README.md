@@ -4,7 +4,7 @@ Game of Life Implementation with Pygame & WASM
 
 ## Web
 
-Click [here](caiopeternela.github.io/pylife/)
+Click [here](https://caiopeternela.github.io/pylife/)
 
 Press SPACE to run and stop the game
 
