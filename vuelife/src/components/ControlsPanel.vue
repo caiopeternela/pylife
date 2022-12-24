@@ -48,7 +48,6 @@ export default {
 </script>
 
 <style scoped>
-
 .box {
   padding: 0;
   background-color: #282a36;
