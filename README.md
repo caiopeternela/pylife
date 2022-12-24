@@ -13,12 +13,14 @@ Vuelife - Click [here](https://vuelife-web.netlify.app)
 ```
 Pylife:
 
+cd pylife
 pip install -r requirements.txt
 python main.py
 ```
 ```
 Vuelife:
 
+cd vuelife
 npm install
 npm run serve
 ```
