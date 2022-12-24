@@ -3,12 +3,12 @@ on:
   push:
     branches:
       - dev
+defaults:
+  run:
+    working-directory: pylife
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: pylife
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
