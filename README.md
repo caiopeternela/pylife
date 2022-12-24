@@ -4,7 +4,7 @@ Game of Life Implementations with Python & Vue.js
 
 ## Web
 
-Pylife - Click [here](https://caiopeternela.github.io/pylifeandvuelife) (Press SPACE to run/stop the game)
+Pylife - Click [here](https://www.pylife.ml) (Press SPACE to run/stop the game)
 
 Vuelife - Click [here](https://vuelife-web.netlify.app)
 
