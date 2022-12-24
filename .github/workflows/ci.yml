@@ -6,14 +6,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: pylife
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
       - run: pip install pygbag
-      - run: pygbag --build pylife
+      - run: pygbag --build $GITHUB_WORKSPACE
       - uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages
-          folder: pylife/build/web
+          folder: build/web
