@@ -7,7 +7,7 @@
       @mouseleave="isMouseDown = false"
     >
       <div v-for="(col, indexX) in gridList" :key="indexX" class="game-column">
-        <app-cell
+        <Cell
           v-for="(isAlive, indexY) in col"
           :key="indexY"
           :status-obj="isAlive"
@@ -26,21 +26,17 @@ import Cell from "@/components/CellBoard.vue";
 
 export default {
   components: {
-    "app-cell": Cell,
+    Cell,
   },
   props: {
     message: {
       default: "",
       type: String,
     },
-    importToken: {
-      default: "",
-      type: String,
-    },
     currentSpeed: {
       default: 0,
       type: Number,
-    },
+    }
   },
   data() {
     return {
@@ -48,7 +44,6 @@ export default {
       height: 20,
       gridList: [],
       currentTick: 0,
-      cellCount: 0,
       cellsAlive: 0,
       cellsCreated: 0,
       isMouseDown: false,
@@ -87,31 +82,26 @@ export default {
       }
     },
     update: function () {
-      let tempArr = [];
+      let newGrid = new Array(this.width * this.height);
       for (let i = 0; i < this.width; i++) {
-        tempArr[i] = [];
         for (let j = 0; j < this.height; j++) {
           let status = this.gridList[i][j].isAlive;
           let neighbours = this.getNeighbours(i, j);
           let result = false;
-          if (status && neighbours < 2) {
-            result = false;
+          switch (neighbours) {
+            case 2:
+              result = status;
+              break;
+            case 3:
+              result = true;
+              break;
           }
-          if ((status && neighbours == 2) || neighbours == 3) {
-            result = true;
-          }
-          if (status && neighbours > 3) {
-            result = false;
-          }
-          if (!status && neighbours == 3) {
-            result = true;
-          }
-          tempArr[i][j] = result;
+          newGrid[i * this.width + j] = result;
         }
       }
       for (let i = 0; i < this.width; i++) {
         for (let j = 0; j < this.height; j++) {
-          this.setCell(i, j, tempArr[i][j]);
+          this.setCell(i, j, newGrid[i * this.width + j]);
         }
       }
     },

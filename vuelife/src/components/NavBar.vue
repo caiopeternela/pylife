@@ -8,7 +8,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon href="https://github.com/caiopeternela/vuelife" target="_blank">
+      <v-btn icon href="https://github.com/caiopeternela/pylifeandvuelife" target="_blank">
         <v-icon>mdi-github</v-icon>
       </v-btn>
     </v-app-bar>

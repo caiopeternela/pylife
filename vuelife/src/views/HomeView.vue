@@ -1,6 +1,6 @@
 <template>
   <div class="GOL">
-    <app-navbar/>
+    <NavBar/>
     <section class="hero is-fullheight">
       <div class="main-content-app">
         <div class="container is-paddingless">
@@ -8,7 +8,7 @@
             <div class="column is-12">
               <transition mode="out-in" name="fade">
                 <keep-alive>
-                  <app-grid
+                  <Grid
                     v-if="mainComponent == 'gamePage'"
                     :message="message"
                     :current-speed="speed"
@@ -23,7 +23,7 @@
         <div class="container">
           <div class="columns">
             <div class="column is-half is-offset-one-quarter">
-              <app-controls
+              <Controls
                 :is-running="isRunning"
                 :main-component="mainComponent"
                 @send="delegate($event)"
@@ -45,9 +45,9 @@ import NavBar from "@/components/NavBar.vue";
 export default {
   name: "App",
   components: {
-    "app-grid": Grid,
-    "app-controls": Controls,
-    "app-navbar": NavBar,
+    Grid,
+    Controls,
+    NavBar,
   },
   data() {
     return {
@@ -102,15 +102,11 @@ body {
   );
   color: #000;
   font-family: "Dosis", Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin: 0px;
 }
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   color: #fff;
 }
 
